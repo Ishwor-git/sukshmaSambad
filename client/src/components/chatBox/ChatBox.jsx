@@ -5,6 +5,7 @@ import InputMsg from "../inputMsg/InputMsg";
 import io from "socket.io-client";
 
 const socket = io.connect("http://localhost:5000");
+const username = prompt("Enter your username: ");
 
 function ChatBox() {
   const [messages, setMessages] = useState([]); // [ {username: "user1", time: "12:00", content: "Hello", userType: "receiver"}]
@@ -31,7 +32,7 @@ function ChatBox() {
           />
         ))}
       </div>
-      <InputMsg onSubmitMsg={handleSubmitMsg} />
+      <InputMsg onSubmitMsg={handleSubmitMsg} user={username} />
     </>
   );
 }

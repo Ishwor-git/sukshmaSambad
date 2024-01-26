@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "./InputMsg.css";
 
-function InputMsg({ onSubmitMsg }) {
+function InputMsg({ onSubmitMsg, user }) {
   const [msg, setMsg] = useState("");
   const handleSubmitButton = (e) => {
     e.preventDefault();
     setMsg("");
     const date = new Date();
+    console.log(user);
     const msgObj = {
-      username: "Esor",
+      username: user,
       time: `${date.getHours()}:${date.getMinutes()}`,
       content: msg,
       userType: "sender",
