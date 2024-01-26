@@ -6,8 +6,10 @@ const io = require("socket.io")(5000, {
 });
 
 io.on("connection", (socket) => {
-  console.log("user connected");
-  socket.on("send-message", (msgObj) => {
-    console.log(msgObj.content);
+  console.log(` ${socket.id} connected`);
+  socket.on("sendMessage", (data) => {
+    const temp = { ...data, userType: "receiver" };
+    console.log(temp);
+    socket.broadcast.emit("receiveMessage", temp);
   });
 });
