@@ -5,7 +5,6 @@ function InputMsg({ onSubmitMsg }) {
   const [msg, setMsg] = useState("");
   const handleSubmitButton = (e) => {
     e.preventDefault();
-    console.log(msg);
     setMsg("");
     const date = new Date();
     const msgObj = {

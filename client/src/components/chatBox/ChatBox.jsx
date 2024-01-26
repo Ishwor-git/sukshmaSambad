@@ -1,32 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ChatMsg from "../message/ChatMsg";
 import "./ChatBox.css";
 import InputMsg from "../inputMsg/InputMsg";
 import io from "socket.io-client";
 
+const socket = io.connect("http://localhost:5000");
+
 function ChatBox() {
-  const socket = io("http://localhost:5000");
-  socket.on("connect", () => {
-    console.log(`Connected to server with id: ${socket.id}`);
-  });
   const [messages, setMessages] = useState([]); // [ {username: "user1", time: "12:00", content: "Hello", userType: "receiver"}]
-  const handleSubmitMsg = (msgObj) => {
-    socket.emit("send-message", (msgObj) => {
-      console.log(msgObj);
+  useEffect(() => {
+    socket.on("receiveMessage", (msgObj) => {
+      setMessages([...messages, msgObj]);
     });
+  }, [messages]);
+  const handleSubmitMsg = (msgObj) => {
+    socket.emit("sendMessage", msgObj);
     setMessages([...messages, msgObj]);
   };
 
   return (
     <>
       <div className="container-chatbox">
-        <ChatMsg
-          username="user"
-          time="12:00"
-          content="Hello"
-          userType="receiver"
-        />
-        <ChatMsg username="Esor" time="12:05" content="Hi" userType="sender" />
         {messages.map((msgObj, index) => (
           <ChatMsg
             key={index}
