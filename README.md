@@ -34,8 +34,9 @@ Sukshma Sambad which is written as " सूक्ष्म संवाद " in 
 3. Run client and server
 
    ```bash
-   npm start (cd sukshmaSambad/client)
-   npm run start (cd sukshmaSambad/server)
+   npm run start
+   cd ../client
+   npm start
    ```
 
 4. Run application and enjoy
