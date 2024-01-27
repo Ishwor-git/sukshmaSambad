@@ -42,5 +42,5 @@ Sukshma Sambad which is written as " सूक्ष्म संवाद " in 
 4. Run application and enjoy
    open web broswer and goto http://localhost:3000
    create a second instance within same machine or
-   goto http://[Your-IP-Address:]3000 in another device connected to same network
+   goto http://[Your-IP-Address]:3000 in another device connected to same network
    start chatting together
