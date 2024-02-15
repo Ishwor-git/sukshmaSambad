@@ -21,18 +21,20 @@ function ChatBox() {
 
   return (
     <>
-      <div className="container-chatbox">
-        {messages.map((msgObj, index) => (
-          <ChatMsg
-            key={index}
-            username={msgObj.username}
-            time={msgObj.time}
-            content={msgObj.content}
-            userType={msgObj.userType}
-          />
-        ))}
+      <div className="chatbox-main">
+        <div className="container-chatbox">
+          {messages.map((msgObj, index) => (
+            <ChatMsg
+              key={index}
+              username={msgObj.username}
+              time={msgObj.time}
+              content={msgObj.content}
+              userType={msgObj.userType}
+            />
+          ))}
+        </div>
+        <InputMsg onSubmitMsg={handleSubmitMsg} user={username} />
       </div>
-      <InputMsg onSubmitMsg={handleSubmitMsg} user={username} />
     </>
   );
 }
