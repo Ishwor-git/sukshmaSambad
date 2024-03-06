@@ -1,5 +1,7 @@
-import ChatBox from "./components/chatBox/ChatBox";
-import Sidebar from "./components/sidebar/Sidebar";
+// import ChatBox from "./components/chatBox/ChatBox";
+// import Sidebar from "./components/sidebar/Sidebar";
+
+import ChatBox from "./components/chatBox";
 
 function App() {
   return (
@@ -13,9 +15,10 @@ function App() {
           height: "100vh",
         }}
       >
+        <ChatBox />
         {/* <Sidebar /> */}
 
-        <ChatBox />
+        {/* <ChatBox /> */}
       </div>
     </>
   );
