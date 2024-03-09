@@ -1,6 +1,7 @@
 import React from "react";
 import HomeSvg from "../assets/icons/home.svg";
 import ChatRoom from "../assets/icons/rooms.svg";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const card = (icon, name) => {
@@ -14,7 +15,9 @@ const Sidebar = () => {
   return (
     <div className=" bg-zinc-200 w-1/4">
       <div className="flex flex-col mt-10 w-full">
-        {card(HomeSvg, "Dashboard")}
+        {/* <Link to="/home">{card(HomeSvg, "Home")}</Link> */}
+        {/* <Link to="/chatroom">{card(ChatRoom, "Chat Room")}</Link> */}
+        {card(HomeSvg, "Home")}
         {card(ChatRoom, "Chat Room")}
       </div>
     </div>

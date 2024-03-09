@@ -31,8 +31,8 @@ const ChatBox = () => {
     handleSubmitMsg(msgObj);
   };
   return (
-    <div className=" w-full h-5/6 bg-black flex flex-col items-center">
-      <div className="w-11/12 h-4/6 bg-slate-300 rounded-t-lg mt-4 flex flex-col-reverse">
+    <div className=" w-full h-full bg-black flex flex-col items-center">
+      <div className="w-full h-full bg-slate-300  flex flex-col-reverse">
         <div className=" flex flex-col overflow-y-auto mb-2">
           {messages.map((msgObj, index) => (
             <ChatMsg
@@ -45,7 +45,7 @@ const ChatBox = () => {
           ))}
         </div>
       </div>
-      <div className="w-11/12 h-10 bg-slate-500 rounded-b-lg mb-8 flex flex-row items-center justify-between box-border">
+      <div className="w-full h-10 bg-slate-500 flex flex-row items-center justify-between box-border">
         <input
           className="w-full pl-3 pr-6 py-1 text-white bg-slate-500 focus:outline-none bg-opacity-0"
           type="text"

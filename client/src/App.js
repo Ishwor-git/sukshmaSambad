@@ -3,8 +3,9 @@
 
 import ChatBox from "./components/chatBox";
 import Header from "./components/header";
+import Landing from "./components/landing";
 import Sidebar from "./components/sidebar";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
@@ -12,7 +13,13 @@ function App() {
         <Header />
         <div className=" flex flex-row h-full w-full">
           <Sidebar />
-          <ChatBox />
+          <Router>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/chatroom" element={<ChatBox />} />
+            </Routes>
+          </Router>
+          {/* <ChatBox /> */}
         </div>
       </div>
     </>
