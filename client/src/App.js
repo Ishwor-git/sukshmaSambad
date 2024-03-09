@@ -2,23 +2,18 @@
 // import Sidebar from "./components/sidebar/Sidebar";
 
 import ChatBox from "./components/chatBox";
+import Header from "./components/header";
+import Sidebar from "./components/sidebar";
 
 function App() {
   return (
     <>
-      <div
-        className="app"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          width: "100vw",
-          height: "100vh",
-        }}
-      >
-        <ChatBox />
-        {/* <Sidebar /> */}
-
-        {/* <ChatBox /> */}
+      <div className=" w-screen h-screen flex flex-col">
+        <Header />
+        <div className=" flex flex-row h-full w-full">
+          <Sidebar />
+          <ChatBox />
+        </div>
       </div>
     </>
   );
