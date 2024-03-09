@@ -34,14 +34,6 @@ const ChatBox = () => {
     <div className=" w-full h-5/6 bg-black flex flex-col items-center">
       <div className="w-11/12 h-4/6 bg-slate-300 rounded-t-lg mt-4 flex flex-col-reverse">
         <div className=" flex flex-col overflow-y-auto mb-2">
-          {/* <ChatMsg
-            key={1}
-            username="John Doe"
-            time="12:00"
-            content="Hello, how are you?"
-            usrType="sender"
-          />
-           */}
           {messages.map((msgObj, index) => (
             <ChatMsg
               key={index}
