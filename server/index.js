@@ -3,6 +3,7 @@ const socketIO = require("socket.io");
 const app = require("express")();
 const http = require("http");
 const path = require("path");
+const cors = require("cors");
 
 const server = http.createServer(app);
 server.listen(5000, () => {
@@ -18,6 +19,12 @@ const io = socketIO(server, {
 
 const PORT = process.env.PORT || 5000;
 
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  })
+);
 app.use("/", require(path.join(__dirname, "routes/main.js")));
 
 io.on("connection", (socket) => {
