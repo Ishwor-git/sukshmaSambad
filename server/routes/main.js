@@ -6,10 +6,13 @@ const userInfoFunc = require(path.join(__dirname, "../data/userInfo.js"));
 router.get("/api/userInfo/checkUser", (req, res) => {
   const user = req.query.userName;
   const result = userInfoFunc.checkUser(user);
-  if (!result) {
-    userInfoFunc.addUser(user);
-  }
   res.send({ result });
+});
+
+router.get("/api/userInfo/addUser", (req, res) => {
+  const user = req.query.userName;
+  userInfoFunc.addUser(user);
+  res.sendStatus(200);
 });
 
 router.get("/api/userInfo/showAllUsers", (req, res) => {
