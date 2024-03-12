@@ -20,7 +20,7 @@ const Innitial = ({ uploadUsername }) => {
         console.log(error);
       });
     // setValidUser(!responce.data.result);
-    console.log(responce.data, !responce.data.result, newUsername);
+    // console.log(responce.data, !responce.data.result, newUsername);
     return !responce.data.result;
   };
 
@@ -30,7 +30,7 @@ const Innitial = ({ uploadUsername }) => {
       .catch((error) => {
         console.log(error);
       });
-    console.log(responce);
+    console.log(responce.data);
   };
 
   const handleCheckPass = (password1, password2) => {
@@ -45,9 +45,9 @@ const Innitial = ({ uploadUsername }) => {
 
   const handleSubmit = async () => {
     const validUser = await getUsername(username);
-    console.log(validUser);
     if (validUser) {
       await postUsername(username);
+      uploadUsername(username);
       setHidePopup("hidden");
     } else {
       setLabelUser({ value: "Username already taken", theme: "text-rose-600" });

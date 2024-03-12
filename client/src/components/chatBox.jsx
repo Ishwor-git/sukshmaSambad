@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import ChatMsg from "./chatMsg";
 import io from "socket.io-client";
 const socket = io.connect("http://localhost:5000");
-const username = prompt("Enter your username: ");
-const ChatBox = () => {
+// const username = "user";
+// const username = prompt("Enter your username: ");
+const ChatBox = ({ username = "user" }) => {
   const [messages, setMessages] = useState([]);
   const [msg, setMsg] = useState("");
 
